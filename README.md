@@ -1,7 +1,6 @@
 LSB-Steganography
 =================
 
-Python program based on stegonographical methods to hide files in images using the Least Significant Bit technique.
 
 I used the most basic method which is the least significant bit. A colour pixel is composed of red, green and blue, encoded on one byte. The idea is to store information in the first bit of every pixel's RGB component. In the worst case, the decimal value is different by one which is not visible to the human eye. In practice, if you don't have space to store all of your data in the first bit of every pixel you should start using the second bit, and so on. You have to keep in mind that the more your store data in an image, the more it can be detected.
 
@@ -20,14 +19,6 @@ The program can hide all of the data if there is enough space in the image. The 
 > *Only images without compression are supported*, namely not JPEG as LSB bits
 might get tampered during the compression phase.
 
-Installation
-------------
-
-This tool only require OpenCV and its dependencies.
-
-```bash
-pip install -r requirements.txt
-```
 
 Usage
 -----
@@ -97,7 +88,3 @@ with open("recovered.bin", "rb") as f:
 ```
 
 
-License
--------
-
-This software is MIT-Licensed.
