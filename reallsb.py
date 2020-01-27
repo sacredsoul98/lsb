@@ -3,8 +3,8 @@
 """LSBSteg.py
 
 Usage:
-python LSBSteg.py encode -i <input> -o <output -f <file>
-python  LSBSteg.py decode -i <input> -o <output>
+  LSBSteg.py encode -i <input> -o <output> -f <file>
+  LSBSteg.py decode -i <input> -o <output>
 
 Options:
   -h, --help                Show this help
@@ -18,7 +18,7 @@ Options:
 import numpy as np
 
 import cv2
-import docopt
+
 
 class SteganographyException(Exception):
     pass
@@ -50,7 +50,7 @@ class LSBSteg():
             else:
                 val[self.curchan] = int(val[self.curchan]) & self.maskZERO #AND with maskZERO
                 
-            self.image[ self.curheight, self.curwidth] = tuple(val)
+            self.image[self.curheight,self.curwidth] = tuple(val)
             self.next_slot() #Move "cursor" to the next space
         
     def next_slot(self):#Move to the next slot were information can be taken or put
@@ -187,4 +187,9 @@ def main():
 
 
 if __name__=="__main__":
-    main()
+   # main()
+   print("Enter your option!")
+   i=input("option-")
+   if(i==1):
+       #encode
+       data=open()
